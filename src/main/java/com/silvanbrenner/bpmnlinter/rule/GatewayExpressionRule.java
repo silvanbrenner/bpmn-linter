@@ -14,14 +14,9 @@ public class GatewayExpressionRule implements IRule {
 
     @Override
     public String getRuleName() {
-        return "GatewayExpression";
+        return "Gateway_Expression";
     }
-
-    @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
+    
     @Override
     public String getDescription() {
         return "Check if gateway outgoing flows with type expression have an expression definied";

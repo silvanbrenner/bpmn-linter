@@ -18,11 +18,6 @@ public class FormKeyRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
         return "Check if every UserTask have a FormKey defined";
     }

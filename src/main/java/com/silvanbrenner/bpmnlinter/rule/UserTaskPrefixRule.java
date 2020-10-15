@@ -25,11 +25,6 @@ public class UserTaskPrefixRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
         return "UserTask should have the Id with prefix 'UserTask_'";
     }

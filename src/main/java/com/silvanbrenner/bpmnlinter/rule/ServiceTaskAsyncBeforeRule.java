@@ -17,13 +17,8 @@ public class ServiceTaskAsyncBeforeRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
-        return null;
+        return "For all ServiceTasks the async before flag should be set";
     }
 
     @Override

@@ -17,13 +17,8 @@ public class UserTaskAsyncAfterRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
-        return null;
+        return "For all UserTask the async after flag should be set";
     }
 
     @Override

@@ -10,8 +10,6 @@ public interface IRule {
 
     String getRuleName();
 
-    Severity getSeverity();
-
     String getDescription();
 
     List<Issue> validate(BpmnModelInstance modelInstance);

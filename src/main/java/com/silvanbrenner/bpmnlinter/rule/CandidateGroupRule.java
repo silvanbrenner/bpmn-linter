@@ -20,11 +20,6 @@ public class CandidateGroupRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
         return "Give all different candidateGroups";
     }

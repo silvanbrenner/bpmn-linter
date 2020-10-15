@@ -18,11 +18,6 @@ public class ExternalTaskTopicRule implements IRule {
     }
 
     @Override
-    public Severity getSeverity() {
-        return null;
-    }
-
-    @Override
     public String getDescription() {
         return "Check if topic is set for ServiceTasks with type 'external'";
     }
