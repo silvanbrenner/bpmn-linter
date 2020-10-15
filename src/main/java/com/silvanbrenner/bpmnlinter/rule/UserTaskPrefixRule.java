@@ -1,5 +1,6 @@
 package com.silvanbrenner.bpmnlinter.rule;
 
+import com.silvanbrenner.bpmnlinter.model.BpmnLinterConfig;
 import com.silvanbrenner.bpmnlinter.model.Issue;
 import com.silvanbrenner.bpmnlinter.model.Severity;
 import org.apache.commons.lang3.StringUtils;
@@ -11,6 +12,12 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserTaskPrefixRule implements IRule {
+
+    private BpmnLinterConfig config;
+
+    public UserTaskPrefixRule(BpmnLinterConfig config) {
+        this.config = config;
+    }
 
     @Override
     public String getRuleName() {
@@ -33,7 +40,7 @@ public class UserTaskPrefixRule implements IRule {
         Collection<UserTask> allUserTasks = modelInstance.getModelElementsByType(UserTask.class);
 
         allUserTasks.forEach(task -> {
-            if (!StringUtils.startsWith(task.getId(), "UserTask_")) {
+            if (!StringUtils.startsWith(task.getId(), config.userTaskPrefix)) {
                 issues.add(new Issue(Severity.Warning, task.getId(), "UserTask-Id should prefix with UserTask_"));
             }
         });
