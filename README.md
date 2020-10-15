@@ -22,5 +22,3 @@ src\test\resources\dummy_process.bpmn -json -exclude-rule Gateway_Expression
 | ServiceTask_AsyncBefore   | For all ServiceTasks the async before flag should be set|
 | UserTask_Prefix           | UserTask should have the Id with prefix 'UserTask_'|
 | UserTask_AsyncAfter       | For all UserTask the async after flag should be set
-|||
-|||
