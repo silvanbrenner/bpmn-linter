@@ -23,3 +23,4 @@ Micronaut based BPMN-Linter CLI Tool for camunda BPMN files
 | UserTask_Prefix           | UserTasks should have the Id with prefix 'UserTask_'|
 | UserTask_AsyncAfter       | For all UserTask the async after flag should be set |
 | ServiceTask_Prefix        | ServiceTasks should have the Id with prefix 'ServiceTask_' |
+| Gateway_Expression        | Check if gateway outgoing flows with type expression have an expression defined |
