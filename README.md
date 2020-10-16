@@ -1,5 +1,5 @@
 # bpmn-linter
-BPMN-Linter for camunda BPMN files
+Micronaut based BPMN-Linter CLI Tool for camunda BPMN files
 
 ![Java CI with Maven](https://github.com/silvanbrenner/bpmn-linter/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main)
 

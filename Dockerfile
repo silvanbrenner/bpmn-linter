@@ -1,5 +1,4 @@
-FROM openjdk:11
-COPY ./target/com.silvanbrenner.bpmnlinter-*jar-with-dependencies.jar /app/application.jar
-WORKDIR /app
-
-CMD ["java", "-jar", "application.jar"]
+FROM openjdk:14-alpine
+COPY target/bpmn-linter-*.jar bpmn-linter.jar
+EXPOSE 8080
+CMD ["java", "-Dcom.sun.management.jmxremote", "-Xmx128m", "-jar", "bpmn-linter.jar"]

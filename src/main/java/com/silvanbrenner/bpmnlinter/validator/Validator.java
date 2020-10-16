@@ -1,6 +1,5 @@
 package com.silvanbrenner.bpmnlinter.validator;
 
-import com.silvanbrenner.bpmnlinter.model.BpmnLinterConfig;
 import com.silvanbrenner.bpmnlinter.model.Issue;
 import com.silvanbrenner.bpmnlinter.rule.*;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
@@ -12,15 +11,15 @@ public class Validator {
 
     private final List<IRule> rules = new ArrayList<>();
 
-    public Validator(BpmnLinterConfig config, List<String> excludedRules) {
+    public Validator(List<String> excludedRules) {
         rules.add(new ServiceTaskTopicRule());
         rules.add(new CandidateGroupRule());
         rules.add(new FormKeyRule());
         rules.add(new GatewayExpressionRule());
-        rules.add(new UserTaskPrefixRule(config));
+        rules.add(new UserTaskPrefixRule());
         rules.add(new ServiceTaskAsyncBeforeRule());
         rules.add(new UserTaskAsyncAfterRule());
-        rules.add(new ServiceTaskPrefixRule(config));
+        rules.add(new ServiceTaskPrefixRule());
 
         if (!excludedRules.isEmpty()) {
             excludedRules.forEach(excludedRule -> rules.removeIf(rule -> rule.getRuleName().equalsIgnoreCase(excludedRule)));

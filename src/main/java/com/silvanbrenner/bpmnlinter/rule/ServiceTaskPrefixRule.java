@@ -1,8 +1,8 @@
 package com.silvanbrenner.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.BpmnLinterConfig;
 import com.silvanbrenner.bpmnlinter.model.Issue;
 import com.silvanbrenner.bpmnlinter.model.Severity;
+import io.micronaut.context.annotation.Value;
 import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.ServiceTask;
@@ -13,11 +13,8 @@ import java.util.List;
 
 public class ServiceTaskPrefixRule implements IRule {
 
-    private final BpmnLinterConfig config;
-
-    public ServiceTaskPrefixRule(BpmnLinterConfig config) {
-        this.config = config;
-    }
+    @Value("${rules.service-task.prefix}")
+    private String serviceTaskPrefix;
 
     @Override
     public String getRuleName() {
@@ -26,7 +23,7 @@ public class ServiceTaskPrefixRule implements IRule {
 
     @Override
     public String getDescription() {
-        return "ServiceTasks should have the Id with prefix '" + config.serviceTaskPrefix + "'";
+        return "ServiceTasks should have the Id with prefix '" + serviceTaskPrefix + "'";
     }
 
     @Override
@@ -35,8 +32,8 @@ public class ServiceTaskPrefixRule implements IRule {
         Collection<ServiceTask> allServiceTasks = modelInstance.getModelElementsByType(ServiceTask.class);
 
         allServiceTasks.forEach(task -> {
-            if (!StringUtils.startsWith(task.getId(), config.serviceTaskPrefix)) {
-                issues.add(new Issue(Severity.Warning, task.getId(), "ServiceTask-Id should prefix with " + config.serviceTaskPrefix));
+            if (!StringUtils.startsWith(task.getId(), serviceTaskPrefix)) {
+                issues.add(new Issue(Severity.Warning, task.getId(), "ServiceTask-Id should prefix with " + serviceTaskPrefix));
             }
         });
 
