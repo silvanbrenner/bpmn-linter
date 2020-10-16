@@ -42,6 +42,7 @@ public class BpmnLinterApp {
         rules.add(new UserTaskPrefixRule(config));
         rules.add(new ServiceTaskAsyncBeforeRule());
         rules.add(new UserTaskAsyncAfterRule());
+        rules.add(new ServiceTaskPrefixRule(config));
 
         if (!parameter.excludedRules.isEmpty()) {
             parameter.excludedRules.forEach(excludedRule -> rules.removeIf(rule -> rule.getRuleName().equalsIgnoreCase(excludedRule)));
