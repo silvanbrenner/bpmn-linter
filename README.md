@@ -10,15 +10,15 @@ BPMN-Linter for camunda BPMN files
 
 -f src\test\resources\dummy_process.bpmn -json
 
-src\test\resources\dummy_process.bpmn -json -exclude-rule Gateway_Expression
+-f src\test\resources\dummy_process.bpmn -json -exclude-rule Gateway_Expression
 
 ## Rules
 
-| ruleName                  | Description |
+| Name                      | Description |
 |---------------------------|-------------|
 | UserTask_CandidateGroup   | Give all different candidateGroups |
 | ServiceTask_Topic         | Check if topic is set for ServiceTasks with type 'external' |
 | UserTask_FormKey          | Check if every UserTask have a FormKey defined |
 | ServiceTask_AsyncBefore   | For all ServiceTasks the async before flag should be set|
 | UserTask_Prefix           | UserTask should have the Id with prefix 'UserTask_'|
-| UserTask_AsyncAfter       | For all UserTask the async after flag should be set
+| UserTask_AsyncAfter       | For all UserTask the async after flag should be set |

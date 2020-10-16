@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UserTaskPrefixRule implements IRule {
 
-    private BpmnLinterConfig config;
+    private final BpmnLinterConfig config;
 
     public UserTaskPrefixRule(BpmnLinterConfig config) {
         this.config = config;

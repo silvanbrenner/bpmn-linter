@@ -28,7 +28,7 @@ public class ExternalTaskTopicRule implements IRule {
         Collection<ServiceTask> allServiceTasks = modelInstance.getModelElementsByType(ServiceTask.class);
 
         allServiceTasks.forEach(serviceTask -> {
-            if (StringUtils.equalsAnyIgnoreCase(serviceTask.getCamundaType(),"external")) {
+            if (StringUtils.equalsAnyIgnoreCase(serviceTask.getCamundaType(), "external")) {
                 issues.add(new Issue(Severity.Information, serviceTask.getId(), "Topic should be handled: " + serviceTask.getCamundaTopic()));
             }
         });

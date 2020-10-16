@@ -29,7 +29,7 @@ public class FormKeyRule implements IRule {
 
         allUserTasks.forEach(task -> {
             if (StringUtils.isNotEmpty(task.getCamundaFormKey())) {
-                issues.add(new Issue(Severity.Information, task.getId(), "FormKey defined "+ task.getCamundaFormKey()));
+                issues.add(new Issue(Severity.Information, task.getId(), "FormKey defined " + task.getCamundaFormKey()));
             } else {
                 issues.add(new Issue(Severity.Error, task.getId(), "No FormKey defined"));
             }
