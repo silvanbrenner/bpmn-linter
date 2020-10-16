@@ -6,7 +6,6 @@ import com.silvanbrenner.bpmnlinter.model.Severity;
 import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.ServiceTask;
-import org.camunda.bpm.model.bpmn.instance.UserTask;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,7 +36,7 @@ public class ServiceTaskPrefixRule implements IRule {
 
         allServiceTasks.forEach(task -> {
             if (!StringUtils.startsWith(task.getId(), config.serviceTaskPrefix)) {
-                issues.add(new Issue(Severity.Warning, task.getId(), "ServiceTask-Id should prefix with "+ config.serviceTaskPrefix));
+                issues.add(new Issue(Severity.Warning, task.getId(), "ServiceTask-Id should prefix with " + config.serviceTaskPrefix));
             }
         });
 

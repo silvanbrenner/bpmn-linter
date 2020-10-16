@@ -1,8 +1,6 @@
 package com.silvanbrenner.bpmnlinter;
 
 import com.beust.jcommander.JCommander;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.silvanbrenner.bpmnlinter.logger.ConsoleLogger;
 import com.silvanbrenner.bpmnlinter.model.BpmnLinterConfig;
 import com.silvanbrenner.bpmnlinter.model.BpmnParser;
@@ -11,7 +9,6 @@ import com.silvanbrenner.bpmnlinter.model.Issue;
 import com.silvanbrenner.bpmnlinter.validator.Validator;
 
 import java.io.FileNotFoundException;
-import java.util.Comparator;
 import java.util.List;
 
 public class BpmnLinterApp {

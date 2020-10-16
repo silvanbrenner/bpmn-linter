@@ -10,11 +10,10 @@ import java.util.List;
 
 public class Validator {
 
-    private List<IRule> rules;
+    private final List<IRule> rules = new ArrayList<>();
 
     public Validator(BpmnLinterConfig config, List<String> excludedRules) {
-        List<IRule> rules = new ArrayList<>();
-        rules.add(new ExternalTaskTopicRule());
+        rules.add(new ServiceTaskTopicRule());
         rules.add(new CandidateGroupRule());
         rules.add(new FormKeyRule());
         rules.add(new GatewayExpressionRule());

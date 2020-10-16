@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class ExternalTaskTopicRule implements IRule {
+public class ServiceTaskTopicRule implements IRule {
 
     @Override
     public String getRuleName() {
@@ -30,6 +30,8 @@ public class ExternalTaskTopicRule implements IRule {
         allServiceTasks.forEach(serviceTask -> {
             if (StringUtils.equalsAnyIgnoreCase(serviceTask.getCamundaType(), "external")) {
                 issues.add(new Issue(Severity.Information, serviceTask.getId(), "Topic should be handled: " + serviceTask.getCamundaTopic()));
+            } else {
+                issues.add(new Issue(Severity.Error, serviceTask.getId(), "Topic must be defined"));
             }
         });
 
