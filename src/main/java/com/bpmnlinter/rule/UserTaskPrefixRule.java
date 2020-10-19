@@ -1,7 +1,8 @@
-package com.silvanbrenner.bpmnlinter.rule;
+package com.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.model.Severity;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Severity;
+import io.micronaut.context.annotation.Value;
 import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.UserTask;
@@ -10,16 +11,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class FormKeyRule implements IRule {
+public class UserTaskPrefixRule implements IRule {
+
+    @Value("${rules.user-task.prefix}")
+    private String userTaskPrefix;
 
     @Override
     public String getRuleName() {
-        return "UserTask_FormKey";
+        return "UserTask_Prefix";
     }
 
     @Override
     public String getDescription() {
-        return "Check if every UserTask have a FormKey defined";
+        return "UserTasks should have the Id with prefix '" + userTaskPrefix + "'";
     }
 
     @Override
@@ -28,10 +32,8 @@ public class FormKeyRule implements IRule {
         Collection<UserTask> allUserTasks = modelInstance.getModelElementsByType(UserTask.class);
 
         allUserTasks.forEach(task -> {
-            if (StringUtils.isNotEmpty(task.getCamundaFormKey())) {
-                issues.add(new Issue(Severity.Information, task.getId(), "FormKey defined " + task.getCamundaFormKey()));
-            } else {
-                issues.add(new Issue(Severity.Error, task.getId(), "No FormKey defined"));
+            if (!StringUtils.startsWith(task.getId(), userTaskPrefix)) {
+                issues.add(new Issue(Severity.Warning, task.getId(), "UserTask-Id should prefix with " + userTaskPrefix));
             }
         });
 

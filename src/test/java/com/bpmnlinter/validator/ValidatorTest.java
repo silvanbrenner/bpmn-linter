@@ -1,8 +1,8 @@
-package com.silvanbrenner.bpmnlinter.validator;
+package com.bpmnlinter.validator;
 
 
-import com.silvanbrenner.bpmnlinter.model.BpmnParser;
-import com.silvanbrenner.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.BpmnParser;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;

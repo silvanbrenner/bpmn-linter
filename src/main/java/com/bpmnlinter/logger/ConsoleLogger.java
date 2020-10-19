@@ -1,8 +1,8 @@
-package com.silvanbrenner.bpmnlinter.logger;
+package com.bpmnlinter.logger;
 
+import com.bpmnlinter.model.Issue;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.silvanbrenner.bpmnlinter.model.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

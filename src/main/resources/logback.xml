@@ -18,7 +18,7 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="com.silvanbrenner.bpmnlinter.logger.ConsoleLogger" level="INFO" additivity="false">
+    <logger name="com.bpmnlinter.logger.ConsoleLogger" level="INFO" additivity="false">
         <appender-ref ref="STDOUT_SIMPLE"/>
     </logger>
 

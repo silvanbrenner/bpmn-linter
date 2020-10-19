@@ -1,8 +1,8 @@
-package com.silvanbrenner.bpmnlinter.rule;
+package com.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.model.Severity;
-import com.silvanbrenner.bpmnlinter.util.NamingConvention;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Severity;
+import com.bpmnlinter.util.NamingConvention;
 import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.UserTask;

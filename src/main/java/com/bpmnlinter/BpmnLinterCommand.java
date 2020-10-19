@@ -1,9 +1,9 @@
-package com.silvanbrenner.bpmnlinter;
+package com.bpmnlinter;
 
-import com.silvanbrenner.bpmnlinter.logger.ConsoleLogger;
-import com.silvanbrenner.bpmnlinter.model.BpmnParser;
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.validator.Validator;
+import com.bpmnlinter.logger.ConsoleLogger;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.validator.Validator;
+import com.bpmnlinter.model.BpmnParser;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

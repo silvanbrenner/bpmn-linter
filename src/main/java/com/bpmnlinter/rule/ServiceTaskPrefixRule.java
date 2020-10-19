@@ -1,7 +1,7 @@
-package com.silvanbrenner.bpmnlinter.rule;
+package com.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.model.Severity;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Severity;
 import io.micronaut.context.annotation.Value;
 import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;

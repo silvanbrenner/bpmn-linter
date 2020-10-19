@@ -1,7 +1,7 @@
-package com.silvanbrenner.bpmnlinter.validator;
+package com.bpmnlinter.validator;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.rule.*;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.rule.*;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 
 import java.util.ArrayList;

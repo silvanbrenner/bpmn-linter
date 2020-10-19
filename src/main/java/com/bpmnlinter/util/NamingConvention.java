@@ -1,4 +1,4 @@
-package com.silvanbrenner.bpmnlinter.util;
+package com.bpmnlinter.util;
 
 public class NamingConvention {
 

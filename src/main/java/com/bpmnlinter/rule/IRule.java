@@ -1,6 +1,6 @@
-package com.silvanbrenner.bpmnlinter.rule;
+package com.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Issue;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.silvanbrenner.bpmnlinter.model;
+package com.bpmnlinter.model;
 
 import org.camunda.bpm.model.bpmn.Bpmn;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;

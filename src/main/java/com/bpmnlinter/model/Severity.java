@@ -1,4 +1,4 @@
-package com.silvanbrenner.bpmnlinter.model;
+package com.bpmnlinter.model;
 
 public enum Severity {
 

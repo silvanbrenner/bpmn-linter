@@ -1,5 +1,5 @@
 applicationType: cli
-defaultPackage: com.silvanbrenner
+defaultPackage: com.bpmnlinter
 testFramework: junit
 sourceLanguage: java
 buildTool: maven

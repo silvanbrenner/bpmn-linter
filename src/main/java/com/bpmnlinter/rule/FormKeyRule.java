@@ -1,7 +1,8 @@
-package com.silvanbrenner.bpmnlinter.rule;
+package com.bpmnlinter.rule;
 
-import com.silvanbrenner.bpmnlinter.model.Issue;
-import com.silvanbrenner.bpmnlinter.model.Severity;
+import com.bpmnlinter.model.Issue;
+import com.bpmnlinter.model.Severity;
+import org.apache.commons.lang3.StringUtils;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.UserTask;
 
@@ -9,16 +10,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class UserTaskAsyncAfterRule implements IRule {
+public class FormKeyRule implements IRule {
 
     @Override
     public String getRuleName() {
-        return "UserTask_AsyncAfter";
+        return "UserTask_FormKey";
     }
 
     @Override
     public String getDescription() {
-        return "For all UserTask the async after flag should be set";
+        return "Check if every UserTask have a FormKey defined";
     }
 
     @Override
@@ -27,8 +28,10 @@ public class UserTaskAsyncAfterRule implements IRule {
         Collection<UserTask> allUserTasks = modelInstance.getModelElementsByType(UserTask.class);
 
         allUserTasks.forEach(task -> {
-            if (!task.isCamundaAsyncAfter()) {
-                issues.add(new Issue(Severity.Warning, task.getId(), "AsyncAfter flag should be set for all UserTasks"));
+            if (StringUtils.isNotEmpty(task.getCamundaFormKey())) {
+                issues.add(new Issue(Severity.Information, task.getId(), "FormKey defined " + task.getCamundaFormKey()));
+            } else {
+                issues.add(new Issue(Severity.Error, task.getId(), "No FormKey defined"));
             }
         });
 

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.silvanbrenner</groupId>
+    <groupId>com.bpmnlinter</groupId>
     <artifactId>bpmn-linter</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
@@ -18,7 +18,7 @@
         <jdk.version>11</jdk.version>
         <release.version>11</release.version>
         <micronaut.version>2.1.1</micronaut.version>
-        <exec.mainClass>com.silvanbrenner.bpmnlinter.BpmnLinterCommand</exec.mainClass>
+        <exec.mainClass>com.bpmnlinter.BpmnLinterCommand</exec.mainClass>
         <picocli.version>4.5.1</picocli.version>
     </properties>
 
@@ -60,7 +60,7 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.silvanbrenner</arg>
+                        <arg>-Amicronaut.processing.group=com.bpmnlinter</arg>
                         <arg>-Amicronaut.processing.module=bpmn-linter</arg>
                     </compilerArgs>
                 </configuration>
